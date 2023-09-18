@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 const App = () => {
   return (
-    <div className="h-screen bg-black">
-      {" "}
+    <div>
       <Navbar />
-      <div>App</div>
+      <Header />
     </div>
   );
 };
