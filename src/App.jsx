@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Section from "./components/Section";
+import Timeline from "./components/Timeline";
 import IDEA from "./assets/bigIdea.png";
 import GUIDE from "./assets/guidelines.svg";
 import JUDGE from "./assets/judge.svg";
@@ -127,8 +128,13 @@ const App = () => {
                 >
                   <div className="font-medium text-white border-b border-primary pb-2">
                     <div className="flex justify-between">
-                      <span className="text-xs text-left md:text-base"> {faq.question}</span>{" "}
-                      <span className="text-lg md:text-2xl text-primary">+</span>
+                      <span className="text-xs text-left md:text-base">
+                        {" "}
+                        {faq.question}
+                      </span>{" "}
+                      <span className="text-lg md:text-2xl text-primary">
+                        +
+                      </span>
                     </div>
                     {activeIndex === index && (
                       <div className="font-regular font-normal md:leading-7 md:mt-5 mt-2 md:text-base text-xs text-left">
@@ -142,6 +148,7 @@ const App = () => {
           </div>
         }
       />
+      <Timeline />
     </div>
   );
 };
