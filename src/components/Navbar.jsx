@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar md:px-20 px-10 md:pt-12 pt-8 md:pb-7 pb-5 border-b border-b-white border-opacity-30 absolute inset-0 top-0 h-max">
+      <div className="navbar md:px-20 px-12 md:pt-12 pt-8 md:pb-7 pb-5 border-b border-b-white border-opacity-30 absolute inset-0 top-0 h-max">
         {/* Desktop navbar */}
         <div className="hidden md:flex flex-row justify-between items-center">
           {" "}
