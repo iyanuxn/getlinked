@@ -30,4 +30,11 @@
     background-position: center -45vh;
     background-repeat: no-repeat;
   }
+
+  .mainBg {
+    background-image: url("../src/assets/smallBg.png");
+    background-size: 90vw;
+    background-position: center 40vh;
+    background-repeat: no-repeat;
+  }
 }

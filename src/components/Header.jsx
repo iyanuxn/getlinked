@@ -6,7 +6,7 @@ import HERO from "../assets/heroImg.png";
 
 const Header = () => {
   return (
-    <div className="text-white bg-dark md:pt-52 pt-28 pb-32 heroBg md:px-20 px-10">
+    <div className="text-white bg-dark md:pt-52 pt-28 md:pb-32 heroBg md:px-20 px-10">
       <div className="w-full flex flex-col items-end">
         {" "}
         <span className="font-bold font-regular text-sm md:text-3xl italic">
@@ -48,7 +48,7 @@ const Header = () => {
         <button className="font-regular w-44 text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
           Register
         </button>
-        <div className="flex gap-5 md:mt-16 mt-8 font-time text-5xl md:px-20 px-10">
+        <div className="flex gap-5 md:mt-16 mt-8 font-time text-5xl md:px-0 px-10">
           <span>
             {" "}
             <span>00</span>
