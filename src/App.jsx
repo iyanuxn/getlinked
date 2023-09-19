@@ -5,7 +5,7 @@ import Main from "./components/Main";
 
 const App = () => {
   return (
-    <div className="bg-dark">
+    <div className="bg-dark webBg">
       <Navbar />
       <Header />
       <Main />

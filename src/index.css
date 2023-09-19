@@ -14,8 +14,8 @@
 
 /* Mobile styles (screens up to 768px wide) */
 @media screen and (max-width: 768px) {
-  .heroBg {
-    background-image: url("../src/assets/heroMobile.png");
+  .webBg {
+    background-image: url("../src/assets/bgMobile.png");
     background-size: 100vw;
     background-position: top;
     background-repeat: no-repeat;
@@ -24,17 +24,10 @@
 
 /* Larger screen styles (screens wider than 768px) */
 @media screen and (min-width: 769px) {
-  .heroBg {
-    background-image: url("../src/assets/hero.png");
-    background-size: 110vw;
-    background-position: center -45vh;
-    background-repeat: no-repeat;
-  }
-
-  .mainBg {
-    background-image: url("../src/assets/smallBg.png");
-    background-size: 90vw;
-    background-position: center 40vh;
+  .webBg {
+    background-image: url("../src/assets/bg.png");
+    background-size: cover;
+    background-position: top;
     background-repeat: no-repeat;
   }
 }

@@ -2,7 +2,7 @@ import IDEA from "../assets/bigIdea.png";
 
 const Main = () => {
   return (
-    <div className="md:px-20 px-10 md:py-24 py-8 border-t border-white border-opacity-30 mt-5 mainBg">
+    <div className="md:px-20 px-10 md:py-24 py-8 border-t border-white border-opacity-30 mt-5">
       <section className="flex md:flex-row flex-col gap-16 md:gap-32 items-center px-5">
         <img src={IDEA} alt="IDEA" className="h-1/3 w-auto"/>
 
