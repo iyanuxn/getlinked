@@ -59,7 +59,7 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <div className="absolute inset-0 w-full h-screen p-10 bg-dark text-white flex flex-col gap-7">
+          <div className="absolute z-20 inset-0 w-full h-screen p-8 bg-dark text-white flex flex-col gap-7">
             <button className="w-full flex flex-row justify-end items-center">
               <img src={CLOSE} className="w-7 h-7" onClick={toggleMobileMenu} />
             </button>

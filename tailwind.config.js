@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         head: ["ClashDisplay", "sans-serif"],
         regular: ["Montserrat", "sans-serif"],
+        time: ["Unica One", "sans-serif"],
       },
       colors: {
         primary: "#D434FE",
