@@ -15,6 +15,7 @@
 .opaqueBg {
   background-image: url("../src/assets/opaqueBg.png");
   background-size: cover;
+  background-blend-mode: color-dodge;
   background-position: top;
   background-repeat: no-repeat;
 }

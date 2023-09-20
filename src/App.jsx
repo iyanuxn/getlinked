@@ -8,6 +8,7 @@ import GUIDE from "./assets/guidelines.svg";
 import JUDGE from "./assets/judge.svg";
 import FAQs from "./assets/FAQs.svg";
 import Prizes from "./components/Prizes";
+import Partners from "./components/Partners";
 
 const judge = [
   {
@@ -151,6 +152,7 @@ const App = () => {
       />
       <Timeline />
       <Prizes />
+      <Partners />
     </div>
   );
 };
