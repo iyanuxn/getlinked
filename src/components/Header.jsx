@@ -6,10 +6,10 @@ import HERO from "../assets/heroImg.png";
 
 const Header = () => {
   return (
-    <div className="text-white md:pt-48 pt-28 md:pb-32 md:px-20 px-12">
+    <div className="text-white md:pt-48 pt-28 md:pb-32 md:px-20 px-8">
       <div className="w-full flex flex-col items-end">
         {" "}
-        <span className="font-bold font-regular text-sm md:text-3xl italic">
+        <span className="font-bold  text-sm md:text-3xl italic">
           {" "}
           Igniting a Revolution in HR Innovation
         </span>
@@ -41,11 +41,11 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <span className="text-xs leading-loose md:text-lg font-medium font-regular text-center md:text-start md:w-3/4 mt-3">
+        <span className="text-xs leading-loose md:text-lg font-medium  text-center md:text-start md:w-3/4 mt-3">
           Participate in getlinked tech Hackathon 2023 stand a chance to win a
           Big prize
         </span>
-        <button className="font-regular w-44 text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
+        <button className=" w-44 text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
           Register
         </button>
         <div className="flex gap-5 md:mt-16 mt-8 font-time text-5xl md:px-0 px-12">

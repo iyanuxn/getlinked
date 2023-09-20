@@ -22,7 +22,7 @@ const Navbar = () => {
             </a>
           </button>
           <div className="flex flex-row justify-between items-center gap-24">
-            <div className="flex flex-row justify-between items-center gap-16 font-regular text-white font-medium text-sm">
+            <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-sm">
               {" "}
               <button>
                 <a href="#home">Timeline</a>
@@ -38,7 +38,7 @@ const Navbar = () => {
               </button>{" "}
             </div>
 
-            <button className="font-regular font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
+            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
               <a href="#home">Register</a>
             </button>
           </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
               <a href="#overview">Overview</a>
               <a href="#faqs">FAQs</a>
               <a href="#contact">Contact</a>
-              <button className="font-regular font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
+              <button className=" font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
                 Register
               </button>
             </div>

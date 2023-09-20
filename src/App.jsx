@@ -7,6 +7,7 @@ import IDEA from "./assets/bigIdea.png";
 import GUIDE from "./assets/guidelines.svg";
 import JUDGE from "./assets/judge.svg";
 import FAQs from "./assets/FAQs.svg";
+import Prizes from "./components/Prizes";
 
 const judge = [
   {
@@ -71,7 +72,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-dark webBg">
+    <div className="bg-dark webBg font-regular">
       <Navbar />
       <Header />
       <Section
@@ -149,6 +150,7 @@ const App = () => {
         }
       />
       <Timeline />
+      <Prizes />
     </div>
   );
 };
