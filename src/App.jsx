@@ -9,6 +9,8 @@ import JUDGE from "./assets/judge.svg";
 import FAQs from "./assets/FAQs.svg";
 import Prizes from "./components/Prizes";
 import Partners from "./components/Partners";
+import Privacy from "./components/Privacy";
+import Footer from "./components/Footer";
 
 const judge = [
   {
@@ -153,6 +155,8 @@ const App = () => {
       <Timeline />
       <Prizes />
       <Partners />
+      <Privacy />
+      <Footer />
     </div>
   );
 };

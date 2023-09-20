@@ -12,6 +12,7 @@ export default {
         primary: "#D434FE",
         secondary: "#903AFF",
         dark: "#150E28",
+        darkAlt: "#100B20"
       },
     },
   },
