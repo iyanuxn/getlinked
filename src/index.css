@@ -12,6 +12,12 @@
   font-style: normal;
 }
 
+.opaqueBg {
+  background-image: url("../src/assets/opaqueBg.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
 /* Mobile styles (screens up to 768px wide) */
 @media screen and (max-width: 768px) {
