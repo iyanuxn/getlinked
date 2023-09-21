@@ -43,8 +43,8 @@ const Register = () => {
               className="w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md py-2 px-4"
             />
           </div>
-          <button className="md:w-44 w-28 text-sm md:text-base bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-8">
-            Submit
+          <button className="md:w-full w-28 text-sm md:text-base bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-8">
+            Register Now
           </button>
         </form>
       </div>
