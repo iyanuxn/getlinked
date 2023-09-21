@@ -3,7 +3,7 @@ import CHECK from "../assets/check.svg";
 
 const Privacy = () => {
   return (
-    <div className="md:px-20 px-9 md:py-16 py-8 border-t border-white border-opacity-30 mt-5">
+    <div className="md:px-32 px-9 md:py-16 py-8 border-t border-white border-opacity-30 mt-5">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col md:w-1/2">
           <span className="text-center md:text-left text-white font-head md:text-3xl text-lg font-bold">

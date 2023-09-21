@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Section from "./components/Section";
-import Timeline from "./components/Timeline";
-import IDEA from "./assets/bigIdea.png";
-import GUIDE from "./assets/guidelines.svg";
-import JUDGE from "./assets/judge.svg";
-import FAQs from "./assets/FAQs.svg";
-import Prizes from "./components/Prizes";
-import Partners from "./components/Partners";
-import Privacy from "./components/Privacy";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import Section from "../components/Section";
+import Timeline from "../components/Timeline";
+import Prizes from "../components/Prizes";
+import Partners from "../components/Partners";
+import Privacy from "../components/Privacy";
+import Footer from "../components/Footer";
+import IDEA from "../assets/bigIdea.png";
+import GUIDE from "../assets/guidelines.svg";
+import JUDGE from "../assets/judge.svg";
+import FAQs from "../assets/FAQs.svg";
 
 const judge = [
   {
@@ -76,7 +75,6 @@ const App = () => {
 
   return (
     <div className="bg-dark webBg font-regular">
-      <Navbar />
       <Header />
       <Section
         imageSrc={IDEA}
