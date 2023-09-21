@@ -28,12 +28,25 @@
     background-position: top;
     background-repeat: no-repeat;
   }
+
+  .regBg {
+    background-image: url("../src/assets/bgRegmobile.png");''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    background-size: 100vw;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Larger screen styles (screens wider than 768px) */
 @media screen and (min-width: 769px) {
   .webBg {
     background-image: url("../src/assets/bg.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  .regBg {
+    background-image: url("../src/assets/bgReg.png");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
