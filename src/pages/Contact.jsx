@@ -45,7 +45,7 @@ const Contact = () => {
           <div className="flex flex-col gap-10 mt-8 w-full">
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Team's Name"
               className="w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md py-2 px-4"
             />{" "}
             <input
