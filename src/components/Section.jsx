@@ -1,13 +1,26 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-const Section = ({ imageSrc, title, titlesub, text, direction, buttonText, id }) => {
+const Section = ({
+  imageSrc,
+  title,
+  titlesub,
+  text,
+  direction,
+  buttonText,
+  id,
+  link,
+}) => {
   return (
     <div className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5">
       <section
-      id = {id}
+        id={id}
         className={`flex gap-8 md:gap-20 items-center md:px-8 ${direction}`}
       >
-        <img src={imageSrc} alt={title} className="w-full md:w-[40vw] h-auto md:mt-0 mt-5" />
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full md:w-[40vw] h-auto md:mt-0 mt-5"
+        />
 
         <div className="text-lg md:text-left text-center md:text-3xl font-bold font-head flex flex-col text-white w-full md:items-start items-center">
           <span>{title}</span>
@@ -16,9 +29,11 @@ const Section = ({ imageSrc, title, titlesub, text, direction, buttonText, id })
             {text}
           </div>
           {buttonText && (
-            <button className="font-regular font-normal md:w-44 w-28 md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-2 md:py-3 rounded-md md:mt-10 mt-8 text-sm">
-              {buttonText}
-            </button>
+            <Link to={link}>
+              <button className="font-regular font-normal md:w-44 w-28 md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-2 md:py-3 rounded-md md:mt-10 mt-8 text-sm">
+                {buttonText}
+              </button>
+            </Link>
           )}
         </div>
       </section>

@@ -56,11 +56,11 @@ const Navbar = () => {
                 <Link to="/#faqs">FAQs</Link>
               </button>{" "}
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
-                <Link to="/#contact">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </button>{" "}
             </div>
 
-            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md transition-all duration-300 ease-in-out">
+            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
               <a href="/">Register</a>
             </button>
           </div>
@@ -87,10 +87,10 @@ const Navbar = () => {
             </button>
             <div className="font-medium text-xl flex flex-col items-start justify-center gap-5">
               {" "}
-              <a href="#timeline">Timeline</a>
-              <a href="#overview">Overview</a>
-              <a href="#faqs">FAQs</a>
-              <a href="#contact">Contact</a>
+              <Link to="#timeline">Timeline</Link>
+              <Link to="#overview">Overview</Link>
+              <Link to="#faqs">FAQs</Link>
+              <Link to="/contact">Contact</Link>
               <button className=" font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
                 Register
               </button>

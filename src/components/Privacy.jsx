@@ -1,5 +1,6 @@
 import PRIVACY from "../assets/privacy.svg";
 import CHECK from "../assets/check.svg";
+import { Link } from "react-router-dom";
 
 const Privacy = () => {
   return (
@@ -58,9 +59,11 @@ const Privacy = () => {
               </div>
               <div className="flex justify-center">
                 {" "}
-                <button className="md:w-44 w-28 text-sm  md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
-                  Read More
-                </button>
+                <Link to="/comingsoon">
+                  <button className="md:w-44 w-28 text-sm  md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

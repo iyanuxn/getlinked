@@ -98,6 +98,7 @@ const App = () => {
         title="Judging Criteria"
         titlesub="Key attributes"
         direction={"md:flex-row flex-col"}
+        link="/comingsoon"
         text={
           <div className="flex flex-col gap-6 md:mt-7">
             {judge.map((item) => (
