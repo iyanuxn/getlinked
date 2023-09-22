@@ -12,6 +12,7 @@ const Register = () => {
   const [selectedCategory, setSelectedCategory] = useState(
     "Select your category"
   );
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
   const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("Select");
@@ -41,52 +42,52 @@ const Register = () => {
     {
       id: 1,
       name: "1",
-      value: "1",
+      value: 1,
     },
     {
       id: 2,
       name: "2",
-      value: "2",
+      value: 2,
     },
     {
       id: 3,
       name: "3",
-      value: "3",
+      value: 3,
     },
     {
       id: 4,
       name: "4",
-      value: "4",
+      value: 4,
     },
     {
       id: 5,
       name: "5",
-      value: "5",
+      value: 5,
     },
     {
       id: 6,
       name: "6",
-      value: "6",
+      value: 6,
     },
     {
       id: 7,
       name: "7",
-      value: "7",
+      value: 7,
     },
     {
       id: 8,
       name: "8",
-      value: "8",
+      value: 8,
     },
     {
       id: 9,
       name: "9",
-      value: "9",
+      value: 9,
     },
     {
       id: 10,
       name: "10",
-      value: "10",
+      value: 10,
     },
   ];
 
@@ -104,8 +105,10 @@ const Register = () => {
 
   const handleCategorySelect = (option) => {
     setSelectedCategory(option);
+    setSelectedCategoryId(option.id);
     setIsCategoryDropdownOpen(false);
   };
+  
 
   const handleSizeSelect = (option) => {
     setSelectedSize(option);
@@ -127,39 +130,32 @@ const Register = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();``
+    e.preventDefault();
 
     // Get form input values
     const teamName = e.target.elements.teamName.value.trim();
     const phone = e.target.elements.phone.value.trim();
     const email = e.target.elements.email.value.trim();
     const projectTopic = e.target.elements.projectTopic.value.trim();
-    const category = selectedCategory;
+    const category = selectedCategoryId;
     const groupSize = selectedSize;
-    const agreeToTerms = agree;
+    const privacyPolicyAccepted = true; // Set privacy policy accepted to true as specified
 
     // Check if any of the required fields are empty
-    if (
-      !teamName ||
-      !phone ||
-      !email ||
-      !projectTopic ||
-      category === "Select your category" ||
-      groupSize === "Select"
-    ) {
+    if (!teamName || !phone || !email || !projectTopic) {
       alert("Please fill in all required fields.");
       return false; // Prevent form submission if any field is empty
     }
 
     // Prepare the data to be sent in the POST request
     const formData = {
-      teamName,
-      phone,
-      email,
-      projectTopic,
-      category,
-      groupSize,
-      agreeToTerms,
+      email: email,
+      phone_number: phone,
+      team_name: teamName,
+      group_size: groupSize,
+      project_topic: projectTopic,
+      category: category,
+      privacy_policy_accepted: privacyPolicyAccepted,
     };
 
     // Log the form data to the console
@@ -167,15 +163,21 @@ const Register = () => {
 
     // Make a POST request to the registration API
     axios
-      .post("https://backend.getlinked.ai/hackathon/registration", formData)
+      .post(
+        "https://backend.getlinked.ai/hackathon/registration",
+        JSON.stringify(formData),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
-        // Handle the successful response here
-        // For example, you can check if the registration was successful
-        // and then open the modal if it was
         if (response.data.success) {
+          console.log("Registration successful:", response.data);
           openModal();
         } else {
-          // Handle registration failure if needed
+          alert("Failed to submit");
         }
       })
       .catch((error) => {
@@ -226,7 +228,8 @@ const Register = () => {
                   name="teamName"
                   type="text"
                   placeholder="Enter the name of your team"
-                  className="text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  autoComplete="off"
                 />
               </div>
               <div className="md:w-1/2">
@@ -237,7 +240,8 @@ const Register = () => {
                   name="phone"
                   type="text"
                   placeholder="Enter your phone number"
-                  className="text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  autoComplete="off"
                 />
               </div>
             </div>{" "}
@@ -248,9 +252,10 @@ const Register = () => {
                 </label>
                 <input
                   name="email"
-                  type="text"
+                  type="email"
                   placeholder="Enter your email address"
-                  className="text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  autoComplete="off"
                 />
               </div>
               <div className="md:w-1/2">
@@ -261,7 +266,8 @@ const Register = () => {
                   name="projectTopic"
                   type="text"
                   placeholder="What is your group project topic"
-                  className="text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -325,7 +331,7 @@ const Register = () => {
                     <div className="flex gap-5 items-center w-full">
                       <span
                         className={`text-xs md:text-[0.8em] mr-3 ${
-                          selectedSize === "Select your group size"
+                          selectedSize === "Select"
                             ? "text-white text-opacity-60"
                             : "text-white"
                         }`}
