@@ -103,15 +103,14 @@ const Register = () => {
     document.body.style.overflow = "unset";
   };
 
-  const handleCategorySelect = (option) => {
+  const handleCategorySelect = (option, id) => {
     setSelectedCategory(option);
-    setSelectedCategoryId(option.id);
+    setSelectedCategoryId(id);
     setIsCategoryDropdownOpen(false);
   };
-  
 
   const handleSizeSelect = (option) => {
-    setSelectedSize(option);
+    setSelectedSize(parseInt(option, 10)); // Parse as base 10
     setIsSizeDropdownOpen(false);
   };
 
@@ -149,13 +148,16 @@ const Register = () => {
 
     // Prepare the data to be sent in the POST request
     const formData = {
+      id: null, // Leave it null to let the server generate it
       email: email,
-      phone_number: phone,
       team_name: teamName,
-      group_size: groupSize,
+      phone_number: phone,
       project_topic: projectTopic,
-      category: category,
+      group_size: groupSize,
       privacy_policy_accepted: privacyPolicyAccepted,
+      date_created: null, // Leave it null to let the server generate it
+      last_updated: null, // Leave it null to let the server generate it
+      category: category,
     };
 
     // Log the form data to the console
@@ -306,7 +308,7 @@ const Register = () => {
                           key={index}
                           className={`hover:bg-darkAlt px-4 py-3 cursor-pointer flex gap-5 items-center transition-all duration-300 ease-in-out ${zIndexC}`}
                           onClick={() => {
-                            handleCategorySelect(option.name);
+                            handleCategorySelect(option.name, option.id);
                           }}
                         >
                           <span className="text-sm md:text-md">
