@@ -1,13 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MENU from "../assets/menu.svg";
 import CLOSE from "../assets/close.svg";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const offsets = {
+      timeline: 0, // Offset for Timeline
+      overview: -65, // Offset for Overview
+      faqs: -65, // Offset for FAQs
+    };
+
+    if (location.hash) {
+      const targetElement = document.getElementById(location.hash.slice(1));
+      if (targetElement) {
+        const targetPosition =
+          targetElement.offsetTop + offsets[location.hash.slice(1)];
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <>
@@ -16,30 +38,30 @@ const Navbar = () => {
         <div className="hidden md:flex flex-row justify-between items-center">
           {" "}
           <button className="font-head font-extrabold">
-            <a className="text-2xl" href="#home">
+            <Link to="/" className="text-2xl">
               <span className="text-white">get</span>
               <span className="text-primary">linked</span>
-            </a>
+            </Link>
           </button>
           <div className="flex flex-row justify-between items-center gap-24">
             <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-sm">
               {" "}
-              <button>
-                <a href="#home">Timeline</a>
+              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+                <Link to="/#timeline">Timeline</Link>
+              </button>
+              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+                <Link to="/#overview">Overview</Link>
               </button>{" "}
-              <button>
-                <a href="#home">Overview</a>
+              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+                <Link to="/#faqs">FAQs</Link>
               </button>{" "}
-              <button>
-                <a href="#home">FAQs</a>
-              </button>{" "}
-              <button>
-                <a href="#home">Contact</a>
+              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+                <Link to="/#contact">Contact</Link>
               </button>{" "}
             </div>
 
             <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
-              <a href="#home">Register</a>
+              <a href="/">Register</a>
             </button>
           </div>
         </div>

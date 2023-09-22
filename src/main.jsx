@@ -4,11 +4,13 @@ import App from "./pages/App";
 import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import Layout from "./Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
+    <ScrollToTop />
     <Routes>
       <Route
         path="/"

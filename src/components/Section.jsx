@@ -1,9 +1,10 @@
 import React from "react";
 
-const Section = ({ imageSrc, title, titlesub, text, direction, buttonText }) => {
+const Section = ({ imageSrc, title, titlesub, text, direction, buttonText, id }) => {
   return (
     <div className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5">
       <section
+      id = {id}
         className={`flex gap-8 md:gap-20 items-center md:px-8 ${direction}`}
       >
         <img src={imageSrc} alt={title} className="w-full md:w-[40vw] h-auto md:mt-0 mt-5" />

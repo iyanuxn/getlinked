@@ -39,7 +39,7 @@ const timeline = [
 
 const Timeline = () => {
   return (
-    <div className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5 text-white">
+    <div id="timeline" className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5 text-white">
       <div className="flex flex-col justify-center items-center gap-1 md:gap-2">
         <span className="font-bold font-head text-lg md:text-3xl">
           Timeline

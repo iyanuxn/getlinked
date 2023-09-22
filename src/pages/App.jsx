@@ -77,6 +77,7 @@ const App = () => {
     <div className="bg-dark webBg font-regular">
       <Header />
       <Section
+        id="overview"
         imageSrc={IDEA}
         title="Introduction to getlinked"
         titlesub="tech Hackathon 1.0"
@@ -84,6 +85,7 @@ const App = () => {
         text="Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!"
       />
       <Section
+        id=""
         imageSrc={GUIDE}
         title="Rules and"
         titlesub="Guidelines"
@@ -91,6 +93,7 @@ const App = () => {
         text="Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!"
       />
       <Section
+        id=""
         imageSrc={JUDGE}
         title="Judging Criteria"
         titlesub="Key attributes"
@@ -112,6 +115,7 @@ const App = () => {
         buttonText={"Read More"}
       />
       <Section
+        id="faqs"
         imageSrc={FAQs}
         title="Frequently Asked"
         titlesub="Questions"

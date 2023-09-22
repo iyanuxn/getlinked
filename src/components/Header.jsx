@@ -6,7 +6,7 @@ import HERO from "../assets/heroImg.png";
 
 const Header = () => {
   return (
-    <div className="text-white md:pt-48 pt-28 md:pb-32 md:px-20 px-8">
+    <div className="text-white md:pt-48 pt-28 md:pb-40 md:px-20 px-8">
       <div className="w-full flex flex-col items-end">
         {" "}
         <span className="font-bold  text-sm md:text-3xl italic">
