@@ -44,23 +44,23 @@ const Navbar = () => {
             </Link>
           </button>
           <div className="flex flex-row justify-between items-center gap-24">
-            <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-sm">
+            <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-[0.9em]">
               {" "}
-              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+              <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#timeline">Timeline</Link>
               </button>
-              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+              <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#overview">Overview</Link>
               </button>{" "}
-              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+              <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#faqs">FAQs</Link>
               </button>{" "}
-              <button className="hover:text-primary transition-all duration-300 ease-in-out">
+              <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#contact">Contact</Link>
               </button>{" "}
             </div>
 
-            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
+            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md transition-all duration-300 ease-in-out">
               <a href="/">Register</a>
             </button>
           </div>
