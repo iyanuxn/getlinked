@@ -138,32 +138,34 @@ const Register = () => {
     const projectTopic = e.target.elements.projectTopic.value.trim();
     const category = selectedCategoryId;
     const groupSize = selectedSize;
-    const privacyPolicyAccepted = true; // Set privacy policy accepted to true as specified
+    const privacyPolicyAccepted = agree;
 
     // Check if any of the required fields are empty
-    if (!teamName || !phone || !email || !projectTopic) {
+    if (
+      !teamName ||
+      !phone ||
+      !email ||
+      !projectTopic ||
+      category == null ||
+      groupSize == "Select" ||
+      !privacyPolicyAccepted
+    ) {
       alert("Please fill in all required fields.");
-      return false; // Prevent form submission if any field is empty
+      return false;
     }
 
-    // Prepare the data to be sent in the POST request
     const formData = {
-      id: null, // Leave it null to let the server generate it
       email: email,
       team_name: teamName,
       phone_number: phone,
       project_topic: projectTopic,
       group_size: groupSize,
-      privacy_policy_accepted: privacyPolicyAccepted,
-      date_created: null, // Leave it null to let the server generate it
-      last_updated: null, // Leave it null to let the server generate it
+      privacy_poclicy_accepted: privacyPolicyAccepted,
       category: category,
     };
 
-    // Log the form data to the console
     console.log("Form Data Submitted:", formData);
 
-    // Make a POST request to the registration API
     axios
       .post(
         "https://backend.getlinked.ai/hackathon/registration",
@@ -175,16 +177,24 @@ const Register = () => {
         }
       )
       .then((response) => {
-        if (response.data.success) {
+        if (response.status === 201) {
           console.log("Registration successful:", response.data);
           openModal();
         } else {
           alert("Failed to submit");
+          console.log(
+            "Registration failed. HTTP Status Code:",
+            response.status
+          );
+          console.log("Response data:", response.data);
         }
       })
+
       .catch((error) => {
-        // Handle errors here
-        console.error("Error submitting registration:", error);
+        console.log(formData.type);
+        console.log("Error response:", error.response);
+        console.log("Error request:", error.request);
+        console.log("Error message:", error.message);
       });
   };
 
@@ -201,7 +211,7 @@ const Register = () => {
           <img src={REGISTER} className="w-3/4 h-3/4" alt="Registration" />
         </div>
         <form
-          className="md:w-[48vw] w-full flex flex-col justify-center items-center md:shadow-2xl md:border mt-6 md:mt-0 border-white border-opacity-5 rounded-md md:py-16 px-5 md:px-12"
+          className="md:w-[48vw] z-50 w-full flex flex-col justify-center items-center md:shadow-2xl md:border mt-6 md:mt-0 border-white border-opacity-5 rounded-md md:py-16 px-5 md:px-12"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col items-start w-full">
@@ -230,7 +240,7 @@ const Register = () => {
                   name="teamName"
                   type="text"
                   placeholder="Enter the name of your team"
-                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
                   autoComplete="off"
                 />
               </div>
@@ -242,7 +252,7 @@ const Register = () => {
                   name="phone"
                   type="text"
                   placeholder="Enter your phone number"
-                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
                   autoComplete="off"
                 />
               </div>
@@ -256,7 +266,7 @@ const Register = () => {
                   name="email"
                   type="email"
                   placeholder="Enter your email address"
-                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
                   autoComplete="off"
                 />
               </div>
@@ -268,7 +278,7 @@ const Register = () => {
                   name="projectTopic"
                   type="text"
                   placeholder="What is your group project topic"
-                  className="focus:outline-0 text-[0.8em] h-12 w-full bg-transparent border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
+                  className="focus:outline-0 text-[0.8em] h-12 w-full border border-white bg-white bg-opacity-5 rounded-md px-4 focus:bg-transparent"
                   autoComplete="off"
                 />
               </div>
