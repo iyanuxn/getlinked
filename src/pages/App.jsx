@@ -10,6 +10,7 @@ import IDEA from "../assets/bigIdea.png";
 import GUIDE from "../assets/guidelines.svg";
 import JUDGE from "../assets/judge.svg";
 import FAQs from "../assets/FAQs.svg";
+import { motion } from "framer-motion";
 
 const judge = [
   {
@@ -74,7 +75,13 @@ const App = () => {
   };
 
   return (
-    <div className="bg-dark webBg font-regular">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-dark webBg font-regular"
+    >
       <Header />
       <Section
         id="overview"
@@ -160,7 +167,7 @@ const App = () => {
       <Partners />
       <Privacy />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

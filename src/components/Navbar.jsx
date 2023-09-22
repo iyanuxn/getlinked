@@ -59,10 +59,11 @@ const Navbar = () => {
                 <Link to="/contact">Contact</Link>
               </button>{" "}
             </div>
-
-            <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md">
-              <a href="/">Register</a>
-            </button>
+            <Link to="/register">
+              <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
+                Register
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -91,9 +92,11 @@ const Navbar = () => {
               <Link to="#overview">Overview</Link>
               <Link to="#faqs">FAQs</Link>
               <Link to="/contact">Contact</Link>
-              <button className=" font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
-                Register
-              </button>
+              <Link to="/register">
+                <button className=" font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
+                  Register
+                </button>
+              </Link>
             </div>
           </div>
         )}

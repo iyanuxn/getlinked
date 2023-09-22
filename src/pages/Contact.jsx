@@ -3,6 +3,7 @@ import IG from "../assets/Ig.svg";
 import X from "../assets/X.svg";
 import FB from "../assets/facebook.svg";
 import LINKEDIN from "../assets/linkedin.svg";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -51,7 +52,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="text-white md:pt-60 pt-28 md:pb-32 md:px-20 px-8 py-10 regBg min-h-screen font-regular">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-white md:pt-60 pt-28 md:pb-32 md:px-20 px-8 py-10 regBg min-h-screen font-regular"
+    >
       <div className="flex justify-between md:px-12">
         <div className="w-1/3 hidden md:flex flex-col font-semibold text-base justify-center gap-10">
           <span className="font-head text-primary text-3xl">Get in touch</span>
@@ -131,7 +138,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -6,6 +6,7 @@ import axios from "axios"; // Import Axios
 import REGISTER from "../assets/register.svg";
 import JOURNEY from "../assets/journey.svg";
 import CONGRATS from "../assets/congrats.svg";
+import { motion } from "framer-motion";
 
 const Register = () => {
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
@@ -199,7 +200,13 @@ const Register = () => {
   };
 
   return (
-    <div className="text-white md:pt-60 pt-28 md:pb-32 md:px-20 px-6 py-10 regBg min-h-screen font-regular">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-white md:pt-60 pt-28 md:pb-32 md:px-20 px-6 py-10 regBg min-h-screen font-regular"
+    >
       <div className="flex md:flex-row-reverse flex-col items-center justify-between">
         <div className="flex flex-col justify-center gap-5 items-center -left-24 md:w-2/3 static md:absolute">
           <div className="flex flex-col items-start w-full px-5">
@@ -421,7 +428,7 @@ const Register = () => {
         subText="Yes, it was easy and you did it!
         check your mail box for the next steps"
       />
-    </div>
+    </motion.div>
   );
 };
 
