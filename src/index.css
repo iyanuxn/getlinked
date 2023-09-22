@@ -30,8 +30,8 @@
   }
 
   .regBg {
-    background-image: url("../src/assets/bgRegmobile.png");''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    background-size: 100vw;
+    background-image: url("../src/assets/bgRegmobile.png");
+    background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
   }
