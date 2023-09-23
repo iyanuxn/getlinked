@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MENU from "../assets/menu.svg";
 import CLOSE from "../assets/close.svg";
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const location = useLocation();
@@ -60,8 +61,10 @@ const Navbar = () => {
               </button>{" "}
             </div>
             <Link to="/register">
-              <button className=" font-medium text-sm bg-gradient-to-r from-primary to-secondary text-white px-10 py-3 rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
-                Register
+              <button className=" font-medium text-sm bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md">
+                <div className="bg-transparent w-full h-full px-10 py-3  transition-all duration-300 ease-in-out hover:bg-dark rounded-md">
+                  Register
+                </div>
               </button>
             </Link>
           </div>

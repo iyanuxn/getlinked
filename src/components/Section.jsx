@@ -69,7 +69,7 @@ const Section = ({
           </motion.div>
           {buttonText && (
             <Link to={link}>
-              <button className="font-regular font-normal md:w-44 w-28 md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-2 md:py-3 rounded-md md:mt-10 mt-8 text-sm">
+              <button className="font-regular font-normal md:w-44 w-28 md:text-lg bg-gradient-to-r from-primary to-secondary hover:scale-105 text-white py-2 md:py-3 rounded-md md:mt-10 mt-8 text-sm transition-all duration-300 ease-in-out">
                 {buttonText}
               </button>
             </Link>

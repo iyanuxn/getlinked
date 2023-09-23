@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { useInView, motion } from "framer-motion";
+
 const timeline = [
   {
     number: "1",
@@ -38,8 +41,14 @@ const timeline = [
 ];
 
 const Timeline = () => {
+  const ref = useRef();
+  const inView = useInView(ref, { once: true });
   return (
-    <div id="timeline" className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5 text-white">
+    <div
+      ref={ref}
+      id="timeline"
+      className="md:px-20 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5 text-white"
+    >
       <div className="flex flex-col justify-center items-center gap-1 md:gap-2">
         <span className="font-bold font-head text-lg md:text-3xl">
           Timeline
@@ -57,7 +66,14 @@ const Timeline = () => {
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              <div
+              <motion.div
+                initial={{ y: "50%" }}
+                animate={inView ? { y: 0 } : { y: "50%" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.5 * index,
+                }}
                 className={`flex flex-col w-1/3 ${
                   index % 2 === 0 ? "md:text-right" : "md:text-left"
                 }`}
@@ -67,23 +83,30 @@ const Timeline = () => {
                   {item.title}
                 </span>
                 <span className="text-[0.8em]">{item.text}</span>
-              </div>
+              </motion.div>
 
               <div className="flex justify-center items-center w-1/3 relative h-32">
-                <div className="z-50 flex justify-center items-center p-4 w-5 h-5 bg-gradient-to-r from-primary to-secondary rounded-full border-8 border-dark">
+                <div className="z-50 flex justify-center items-center p-4 w-5 h-5 bg-gradient-to-r from-primary to-secondary rounded-full border-8 border-dark transition-all duration-300 ease-in-out">
                   <span className="text-sm md:text-lg">{item.number}</span>
                 </div>
 
                 <div className="bg-primary h-full w-1 absolute -top-20"></div>
               </div>
 
-              <span
+              <motion.span
+                initial={{ y: "50%" }}
+                animate={inView ? { y: 0 } : { y: "50%" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.6 * index,
+                }}
                 className={`font-bold text-xs md:text-xl text-primary w-1/3  ${
                   index % 2 === 0 ? "md:text-left" : "md:text-right"
                 }`}
               >
                 {item.date}
-              </span>
+              </motion.span>
             </div>
           ))}
         </div>
