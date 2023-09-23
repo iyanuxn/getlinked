@@ -1,3 +1,4 @@
+import React from "react";
 import IG from "../assets/Ig.svg";
 import X from "../assets/X.svg";
 import FB from "../assets/facebook.svg";
@@ -10,10 +11,8 @@ const Footer = () => {
   return (
     <div className="md:px-36 px-12 md:py-16 py-8 border-t border-white border-opacity-30 mt-5 bg-darkAlt bg-opacity-80">
       <div className="flex flex-col justify-center items-center gap-16 md:gap-24">
-        {" "}
         <div className="flex md:flex-row flex-col md:gap-52 w-full">
           <div className="flex flex-col md:w-1/2 justify-start items-start gap-2">
-            {" "}
             <button className="font-head font-extrabold">
               <a className="text-2xl" href="#home">
                 <span className="text-white">get</span>
@@ -23,7 +22,7 @@ const Footer = () => {
             <span className="text-white leading-5 md:leading-7 tracking-wide text-xs md:text-[0.9em]">
               Getlinked Tech Hackathon is a technology innovation program
               established by a group of organizations with the aim of showcasing
-              young and talented individuals in the field of technology
+              young and talented individuals in the field of technology.
             </span>
             <span className="h-4 md:h-max md:mt-16 mt-8 text-white font-semibold flex gap-2 md:gap-3 items-center justify-center md:text-sm text-xs">
               <span>
@@ -56,18 +55,18 @@ const Footer = () => {
                 <span className="text-primary">Follow us</span>
                 <button>
                   {" "}
-                  <img src={IG} className="md:w-7 md:h-7 w-6 h-6" />
+                  <img src={IG} className="md:w-7 md:h-7 w-6 h-6" alt="Instagram" />
                 </button>
                 <button>
-                  <img src={X} className="md:w-5 md:h-5 w-4 h-4" />
+                  <img src={X} className="md:w-5 md:h-5 w-4 h-4" alt="X" />
                 </button>
                 <button>
                   {" "}
-                  <img src={FB} className="md:w-6 md:h-6 w-5 h-5" />
+                  <img src={FB} className="md:w-6 md:h-6 w-5 h-5" alt="Facebook" />
                 </button>{" "}
                 <button>
                   {" "}
-                  <img src={LINKEDIN} className="md:w-7 md:h-7 w-6 h-6" />
+                  <img src={LINKEDIN} className="md:w-7 md:h-7 w-6 h-6" alt="LinkedIn" />
                 </button>{" "}
               </div>
             </div>
@@ -76,12 +75,12 @@ const Footer = () => {
                 Contact Us
               </span>
               <div className="flex gap-5">
-                <img src={CALL} className="w-4 h-4" />
+                <img src={CALL} className="w-4 h-4" alt="Call" />
                 <span>+234 679 81819</span>
               </div>
               <div className="flex gap-5">
-                <img src={MAP} className="w-4 h-4" />
-                <span>27,Alara Street Yaba 100012 Lagos State</span>
+                <img src={MAP} className="w-4 h-4" alt="Map" />
+                <span>27, Alara Street Yaba 100012 Lagos State</span>
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ const judge = [
   },
   {
     title: "Adherence to Hackathon Rules: ",
-    text: "Judges will Ensure that the team adhered to the rules and guidelines of the hackathon, including deadlines, use of specific technologies or APIs, and any other competition-specific requirements.",
+    text: "Judges will ensure that the team adhered to the rules and guidelines of the hackathon, including deadlines, use of specific technologies or APIs, and any other competition-specific requirements.",
   },
 ];
 

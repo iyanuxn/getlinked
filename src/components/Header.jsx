@@ -29,9 +29,9 @@ const Header = () => {
           />
         </span>
         <motion.div
-          initial={{ x: "100%" }} // Initial position, fully to the right
-          animate={{ x: 0 }} // Animate to x: 0, which is the normal position
-          transition={{ duration: 1 }} // Animation duration
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
         >
           <img src={LINE} alt="line" className="md:w-56 w-28" />
         </motion.div>
@@ -52,9 +52,9 @@ const Header = () => {
               />
             </motion.div>
             <motion.div
-              initial={{ x: "-100%" }} // Initial position, fully to the left
-              animate={{ x: 0 }} // Animate to x: 0, which is the normal position
-              transition={{ duration: 1 }} // Animation duration
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
               className="flex flex-col gap-2 w-max"
             >
               getlinked Tech
@@ -62,9 +62,9 @@ const Header = () => {
           </div>
           <div className="flex gap-2 items-center">
             <motion.div
-              initial={{ x: "-100%" }} // Initial position, fully to the left
-              animate={{ x: 0 }} // Animate to x: 0, which is the normal position
-              transition={{ duration: 1 }} // Animation duration
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
             >
               <span>Hackathon</span>
               <span className="text-primary"> 1.0</span>
@@ -81,10 +81,10 @@ const Header = () => {
           </div>
         </div>
         <motion.div
-          initial={{ x: "-100%" }} // Initial position, fully to the left
-          animate={{ x: 0 }} // Animate to x: 0, which is the normal position
-          transition={{ duration: 1 }} // Animation duration
-          className="text-xs leading-loose md:text-lg font-medium  text-center md:text-start md:w-3/4 mt-3"
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
+          className="text-xs leading-loose md:text-lg font-medium text-center md:text-start md:w-3/4 mt-3"
         >
           Participate in getlinked tech Hackathon 2023 stand a chance to win a
           Big prize
@@ -96,9 +96,9 @@ const Header = () => {
         </Link>
         <CountdownTimer />
         <motion.div
-          initial={{ x: "100%" }} // Initial position, fully to the left
-          animate={{ x: 0 }} // Animate to x: 0, which is the normal position
-          transition={{ duration: 1 }} // Animation duration
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1 }}
         >
           <img src={HERO} alt="hero" className="flex md:hidden w-full mt-10" />
         </motion.div>

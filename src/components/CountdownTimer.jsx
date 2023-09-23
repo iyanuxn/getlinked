@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const CountdownTimer = () => {
-  // Define the target date and time for the countdown
   const targetDate = new Date("2023-09-23T23:59:59").getTime();
 
   const calculateTimeLeft = () => {
@@ -22,7 +21,6 @@ const CountdownTimer = () => {
       };
     }
 
-    // If the target date has passed, return all zeros
     return {
       daysAsHours: 0,
       minutes: 0,

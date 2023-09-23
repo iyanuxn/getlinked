@@ -13,16 +13,15 @@ const Privacy = () => {
           <span className="text-primary text-center md:text-left font-head md:text-3xl text-lg font-bold">
             Terms
           </span>
-          <span className="text-center  md:text-left text-white font-normal leading-4 md:leading-7 font-regular text-xs md:text-base w-full md:mt-4">
-            Last updated on September 12, 2023{" "}
-          </span>{" "}
-          <span className="text-center  md:text-left text-white font-semibold leading-6 md:leading-7 font-regular text-xs md:text-[1.1rem] w-full md:w-3/4 mt-6 md:mt-10">
-            Below are our privacy & policy, which outline a lot of goodies. it’s
-            our aim to always take of our participant
+          <span className="text-center md:text-left text-white font-normal leading-4 md:leading-7 font-regular text-xs md:text-base w-full md:mt-4">
+            Last updated on September 12, 2023
+          </span>
+          <span className="text-center md:text-left text-white font-semibold leading-6 md:leading-7 font-regular text-xs md:text-[1.1rem] w-full md:w-3/4 mt-6 md:mt-10">
+            Below are our privacy & policy, which outline a lot of goodies. It's
+            our aim to always take care of our participants.
           </span>
           <div className="border border-primary rounded-md md:mt-10 mt-8 text-white px-5 py-10 md:px-16 md:py-16">
             <div className="justify-center flex">
-              {" "}
               <span className="md:text-sm text-[0.7em] font-semibold text-center md:text-left leading-7 md:leading-9 tracking-wide">
                 At getlinked tech Hackathon 1.0, we value your privacy and are
                 committed to protecting your personal information. This Privacy
@@ -47,20 +46,19 @@ const Privacy = () => {
                 <img src={CHECK} alt="check" className="w-4 h-4 mt-1" />
                 <span className="text-[0.8em] tracking-wide leading-5 md:text-[0.9em]">
                   The Standard License grants you a non-exclusive right to
-                  navigate and register for our event
+                  navigate and register for our event.
                 </span>
-              </div>{" "}
+              </div>
               <div className="flex gap-3 mt-5">
                 <img src={CHECK} alt="check" className="w-4 h-4 mt-1" />
                 <span className="text-[0.8em] tracking-wide leading-5 md:text-[0.9em]">
                   The Standard License grants you a non-exclusive right to
-                  navigate and register for our event
+                  navigate and register for our event.
                 </span>
               </div>
               <div className="flex justify-center">
-                {" "}
                 <Link to="/comingsoon">
-                  <button className="md:w-44 w-28 text-sm  md:text-lg bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-all ease-in-out duration-300 text-white py-3 rounded-md md:mt-10 mt-5">
+                  <button className="md:w-44 w-28 text-sm md:text-lg bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-all ease-in-out duration-300 text-white py-3 rounded-md md:mt-10 mt-5">
                     Read More
                   </button>
                 </Link>

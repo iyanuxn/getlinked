@@ -6,13 +6,11 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
-
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-
       const scrollThreshold = 50;
 
       setVisible(
@@ -28,7 +26,6 @@ const Navbar = () => {
   }, [prevScrollPos]);
 
   const location = useLocation();
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -37,9 +34,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const offsets = {
-      timeline: 0, // Offset for Timeline
-      overview: -65, // Offset for Overview
-      faqs: -65, // Offset for FAQs
+      timeline: 0,
+      overview: -65,
+      faqs: -65,
     };
 
     if (location.hash) {
@@ -56,33 +53,27 @@ const Navbar = () => {
 
   const menuAnimation = useAnimation();
   const closeButtonAnimation = useAnimation();
-  const menuItemAnimation = useAnimation(); // Animation for menu items
+  const menuItemAnimation = useAnimation();
   const menuItemVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
   };
   const menuExitAnimation = {
-    x: "-100%", // Slide out to the left
-    opacity: 0, // Fade out
+    x: "-100%",
+    opacity: 0,
   };
 
   useEffect(() => {
-    // Animate the mobile menu when it opens or closes
     if (isMobileMenuOpen) {
-      menuAnimation.start({ x: 0, opacity: 1 }); // Glide in and fade in
-      closeButtonAnimation.start({ opacity: 1 }); // Show close button
-      menuItemAnimation.start("visible"); // Start menu item animations
+      menuAnimation.start({ x: 0, opacity: 1 });
+      closeButtonAnimation.start({ opacity: 1 });
+      menuItemAnimation.start("visible");
     } else {
-      menuAnimation.start({ x: "-100%", opacity: 0 }); // Slide out and fade out
-      closeButtonAnimation.start({ opacity: 0 }); // Hide close button
-      menuItemAnimation.start("hidden"); // Hide menu items
+      menuAnimation.start({ x: "-100%", opacity: 0 });
+      closeButtonAnimation.start({ opacity: 0 });
+      menuItemAnimation.start("hidden");
     }
-  }, [
-    isMobileMenuOpen,
-    menuAnimation,
-    closeButtonAnimation,
-    menuItemAnimation,
-  ]);
+  }, [isMobileMenuOpen, menuAnimation, closeButtonAnimation, menuItemAnimation]);
 
   return (
     <>
@@ -91,10 +82,8 @@ const Navbar = () => {
           visible ? "top-0" : "-top-60"
         }`}
       >
-        {/* Desktop navbar */}
         <div className="hidden md:flex flex-row justify-between items-center">
-          {" "}
-          <button className="font-head font-extrabold ">
+          <button className="font-head font-extrabold">
             <Link to="/" className="text-2xl">
               <span className="text-white">get</span>
               <span className="text-primary">linked</span>
@@ -102,22 +91,21 @@ const Navbar = () => {
           </button>
           <div className="flex flex-row justify-between items-center gap-20">
             <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-[0.9em]">
-              {" "}
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#timeline">Timeline</Link>
               </button>
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#overview">Overview</Link>
-              </button>{" "}
+              </button>
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/#faqs">FAQs</Link>
-              </button>{" "}
+              </button>
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">
                 <Link to="/contact">Contact</Link>
-              </button>{" "}
+              </button>
             </div>
             <Link to="/register">
-              <button className=" font-medium text-sm bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md">
+              <button className="font-medium text-sm bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md">
                 <div className="bg-transparent w-full h-full px-10 py-3  transition-all duration-300 ease-in-out hover:bg-dark rounded-md">
                   Register
                 </div>
@@ -125,7 +113,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        {/* Mobile navbar */}
+
         <div
           className={`flex transition-all ease-in-out duration-300 md:hidden flex-row justify-between items-center ${
             visible ? "top-0" : "-top-40"
@@ -142,7 +130,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -180,7 +167,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/register" onClick={toggleMobileMenu}>
                   <motion.button
-                    className=" font-medium text-lg bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md"
+                    className="font-medium text-lg bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md"
                     variants={menuItemVariants}
                   >
                     <div className="bg-transparent w-full h-full px-10 py-3  transition-all duration-300 ease-in-out hover:bg-dark rounded-md">

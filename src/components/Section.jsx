@@ -53,7 +53,6 @@ const Section = ({
             variants={titleAnimation}
             className="flex flex-col w-max"
           >
-            {" "}
             <span>{title}</span>
             <span className="text-primary">{titlesub}</span>
           </motion.div>

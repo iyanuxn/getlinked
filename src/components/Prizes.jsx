@@ -6,6 +6,7 @@ import BADGES from "../assets/badges.png";
 const Prizes = () => {
   const ref = useRef();
   const inView = useInView(ref, { once: true });
+
   return (
     <div className="md:px-20 px-12 md:py-16 py-16 border-t border-white border-opacity-30 mt-5 opaqueBg">
       <div className="flex flex-col justify-center items-end gap-1 md:gap-2">
@@ -16,15 +17,14 @@ const Prizes = () => {
               Rewards
             </span>
             <span className="text-center  md:text-left text-white font-semibold leading-4 md:leading-7 font-regular text-xs md:text-base w-full md:w-4/5 mt-1 md:mt-4">
-              Highlight of the prizes or rewards for winners and for
-              participants.
+              Highlight of the prizes or rewards for winners and participants.
             </span>
           </div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center md:mt-24 mt-10 md:gap-0 gap-32">
         <motion.div
-          animate={inView ? { scale: 1 } : { scale: 0.8 }} // Adjust the scale values as needed
+          animate={inView ? { scale: 1 } : { scale: 0.8 }}
           transition={{
             type: "spring",
             stiffness: 100,

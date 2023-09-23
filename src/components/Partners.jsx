@@ -20,25 +20,13 @@ const Partners = () => {
       <div className="flex flex-col md:py-28 py-5 md:mt-10 mt-7 md:gap-10 gap-3 border border-primary rounded-md px-5 md:px-16">
         <div className="flex">
           <div className="w-1/3 flex justify-center items-center">
-            <img
-              src={LIBERTY}
-              alt="LIBERTY"
-              className="md:w-max w-1/2 h-auto"
-            />
+            <img src={LIBERTY} alt="LIBERTY" className="md:w-max w-1/2 h-auto" />
           </div>
           <div className="w-1/3 flex justify-center items-center border-l-[0.1em] border-r-[0.1em] md:border-l-[0.2em] md:border-r-[0.2em] border-primary">
-            <img
-              src={LIBERTYPAY}
-              alt="LIBERTYPAY"
-              className="md:w-max w-1/2 h-auto"
-            />
+            <img src={LIBERTYPAY} alt="LIBERTYPAY" className="md:w-max w-1/2 h-auto" />
           </div>
           <div className="w-1/3 flex justify-center items-center">
-            <img
-              src={WINWISE}
-              alt="WINWISE"
-              className="md:w-max w-1/2 h-auto"
-            />
+            <img src={WINWISE} alt="WINWISE" className="md:w-max w-1/2 h-auto" />
           </div>
         </div>
         <div className="flex">
@@ -47,7 +35,7 @@ const Partners = () => {
           </div>
           <div className="w-1/3 flex justify-center">
             <div className="w-4/5 bg-primary h-[0.1em] md:h-[0.2em]"></div>
-          </div>{" "}
+          </div>
           <div className="w-1/3 flex justify-center">
             <div className="w-4/5 bg-primary h-[0.1em] md:h-[0.2em]"></div>
           </div>
@@ -57,11 +45,7 @@ const Partners = () => {
             <img src={WISPER} alt="LIBERTY" className="md:w-max w-1/2 h-auto" />
           </div>
           <div className="w-1/3 flex justify-center items-center border-l-[0.1em] border-r-[0.1em] md:border-l-[0.2em] md:border-r-[0.2em] border-primary">
-            <img
-              src={PAYBOX}
-              alt="LIBERTYPAY"
-              className="md:w-max w-1/2 h-auto"
-            />
+            <img src={PAYBOX} alt="LIBERTYPAY" className="md:w-max w-1/2 h-auto" />
           </div>
           <div className="w-1/3 flex justify-center items-center">
             <img src={VIZUAL} alt="WINWISE" className="md:w-max w-1/2 h-auto" />
