@@ -60,7 +60,7 @@ const Privacy = () => {
               <div className="flex justify-center">
                 {" "}
                 <Link to="/comingsoon">
-                  <button className="md:w-44 w-28 text-sm  md:text-lg bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md md:mt-10 mt-5">
+                  <button className="md:w-44 w-28 text-sm  md:text-lg bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-all ease-in-out duration-300 text-white py-3 rounded-md md:mt-10 mt-5">
                     Read More
                   </button>
                 </Link>

@@ -38,32 +38,33 @@ const judge = [
 const faqs = [
   {
     question: "Can I work on a project I started before the hackathon?",
-    answer: "The registration deadline for the hackathon is [date].",
+    answer:
+      "Yes, you are allowed to work on a project that you started before the hackathon. However, keep in mind that any work done on the project during the hackathon should adhere to the event's rules and guidelines.",
   },
   {
     question: "What happens if I need help during the hackathon?",
     answer:
-      "You can find team members through our official Discord channel or during the networking session on the first day of the event.",
+      "If you need assistance during the hackathon, you can reach out to our support team or find potential team members through our official Discord channel. Additionally, we will have a networking session on the first day of the event where you can connect with other participants and seek help.",
   },
   {
     question: "What happens if I don't have an idea for a project?",
     answer:
-      "You can find team members through our official Discord channel or during the networking session on the first day of the event.",
+      "No worries! If you don't have a project idea, you can still participate in the hackathon. You can join an existing team or form a new one with other participants who may have project ideas. Our official Discord channel and the networking session on the first day are great opportunities to find team members and brainstorm ideas together.",
   },
   {
     question: "Can I join a team or do I have to come with one?",
     answer:
-      "You can find team members through our official Discord channel or during the networking session on the first day of the event.",
+      "You don't need to come to the hackathon with a pre-formed team. You can join a team during the event. We encourage collaboration, and you can find team members through our official Discord channel or during the networking session on the first day of the event. Many participants form teams on the spot.",
   },
   {
-    question: "What happens after the hackathon ends",
+    question: "What happens after the hackathon ends?",
     answer:
-      "You can find team members through our official Discord channel or during the networking session on the first day of the event.",
+      "After the hackathon concludes, you can continue working on your project if you wish. Some participants choose to refine their projects further or even launch them as startups. We also provide post-hackathon support and resources to help you take your project to the next level.",
   },
   {
-    question: "Can I work on a project I started before the hackathon?",
+    question: "Is there a registration deadline for the hackathon?",
     answer:
-      "You can find team members through our official Discord channel or during the networking session on the first day of the event.",
+      "Yes, there is a registration deadline for the hackathon. The registration deadline is 20th September 2023. Be sure to register before this date to secure your spot in the event.",
   },
 ];
 

@@ -27,11 +27,11 @@ const Footer = () => {
             </span>
             <span className="h-4 md:h-max md:mt-16 mt-8 text-white font-semibold flex gap-2 md:gap-3 items-center justify-center md:text-sm text-xs">
               <span>
-                <Link>Terms of Use</Link>
+                <Link to="#">Terms of Use</Link>
               </span>{" "}
               <div className="h-full bg-primary w-[0.17em]"></div>{" "}
               <span>
-                <Link>Privacy Policy</Link>
+                <Link to="#">Privacy Policy</Link>
               </span>
             </span>
           </div>

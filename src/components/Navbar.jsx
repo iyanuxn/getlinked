@@ -2,9 +2,31 @@ import { useState, useEffect } from "react";
 import MENU from "../assets/menu.svg";
 import CLOSE from "../assets/close.svg";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 const Navbar = () => {
+  const [visible, setVisible] = useState(true);
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      const scrollThreshold = 50;
+
+      setVisible(
+        prevScrollPos > currentScrollPos || currentScrollPos < scrollThreshold
+      );
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   const location = useLocation();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,9 +54,43 @@ const Navbar = () => {
     }
   }, [location]);
 
+  const menuAnimation = useAnimation();
+  const closeButtonAnimation = useAnimation();
+  const menuItemAnimation = useAnimation(); // Animation for menu items
+  const menuItemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const menuExitAnimation = {
+    x: "-100%", // Slide out to the left
+    opacity: 0, // Fade out
+  };
+
+  useEffect(() => {
+    // Animate the mobile menu when it opens or closes
+    if (isMobileMenuOpen) {
+      menuAnimation.start({ x: 0, opacity: 1 }); // Glide in and fade in
+      closeButtonAnimation.start({ opacity: 1 }); // Show close button
+      menuItemAnimation.start("visible"); // Start menu item animations
+    } else {
+      menuAnimation.start({ x: "-100%", opacity: 0 }); // Slide out and fade out
+      closeButtonAnimation.start({ opacity: 0 }); // Hide close button
+      menuItemAnimation.start("hidden"); // Hide menu items
+    }
+  }, [
+    isMobileMenuOpen,
+    menuAnimation,
+    closeButtonAnimation,
+    menuItemAnimation,
+  ]);
+
   return (
     <>
-      <div className="navbar md:px-20 px-12 md:pt-12 pt-8 md:pb-7 pb-5 border-b border-b-white border-opacity-30 absolute inset-0 top-0 h-max font-regular">
+      <div
+        className={`navbar backdrop-blur-md md:px-20 px-12 md:pt-12 pt-8 md:pb-7 pb-5 border-b border-b-white border-opacity-30 fixed bg-dark bg-opacity-90 z-[100] transition-all duration-300 ease-in-out inset-0 top-0 h-max font-regular ${
+          visible ? "top-0" : "-top-60"
+        }`}
+      >
         {/* Desktop navbar */}
         <div className="hidden md:flex flex-row justify-between items-center">
           {" "}
@@ -69,14 +125,17 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-
         {/* Mobile navbar */}
-        <div className="flex md:hidden flex-row justify-between items-center">
+        <div
+          className={`flex transition-all ease-in-out duration-300 md:hidden flex-row justify-between items-center ${
+            visible ? "top-0" : "-top-40"
+          }`}
+        >
           <button className="font-head font-extrabold">
-            <a className="text-lg" href="#home">
+            <Link className="text-lg" to="/">
               <span className="text-white">get</span>
               <span className="text-primary">linked</span>
-            </a>
+            </Link>
           </button>
           <button onClick={toggleMobileMenu}>
             <img src={MENU} className="w-5 h-5" alt="menu" />
@@ -84,25 +143,55 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div className="absolute z-20 inset-0 w-full h-screen p-8 bg-dark text-white flex flex-col gap-7">
-            <button className="w-full flex flex-row justify-end items-center">
-              <img src={CLOSE} className="w-7 h-7" onClick={toggleMobileMenu} />
-            </button>
-            <div className="font-medium text-xl flex flex-col items-start justify-center gap-5">
-              {" "}
-              <Link to="#timeline">Timeline</Link>
-              <Link to="#overview">Overview</Link>
-              <Link to="#faqs">FAQs</Link>
-              <Link to="/contact">Contact</Link>
-              <Link to="/register">
-                <button className=" font-medium text-lg bg-gradient-to-r from-primary to-secondary text-white px-14 py-4 rounded-md">
-                  Register
-                </button>
-              </Link>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="absolute z-[100] inset-0 w-full h-screen p-8 bg-dark text-white flex flex-col gap-7"
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={menuAnimation}
+              exit={menuExitAnimation}
+            >
+              <motion.button
+                className="w-full flex flex-row justify-end items-center"
+                onClick={toggleMobileMenu}
+                initial={{ opacity: 0 }}
+                animate={closeButtonAnimation}
+              >
+                <img src={CLOSE} className="w-7 h-7" alt="menu" />
+              </motion.button>
+              <motion.div
+                className="font-medium text-xl flex flex-col items-start justify-center gap-5"
+                initial="hidden"
+                animate={menuItemAnimation}
+                variants={menuItemVariants}
+                transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+              >
+                <Link to="/#timeline" onClick={toggleMobileMenu}>
+                  Timeline
+                </Link>
+                <Link to="/#overview" onClick={toggleMobileMenu}>
+                  Overview
+                </Link>
+                <Link to="/#faqs" onClick={toggleMobileMenu}>
+                  FAQs
+                </Link>
+                <Link to="/contact" onClick={toggleMobileMenu}>
+                  Contact
+                </Link>
+                <Link to="/register" onClick={toggleMobileMenu}>
+                  <motion.button
+                    className=" font-medium text-lg bg-gradient-to-r px-[0.2vw] py-[0.2vw] from-primary to-secondary text-white rounded-md"
+                    variants={menuItemVariants}
+                  >
+                    <div className="bg-transparent w-full h-full px-10 py-3  transition-all duration-300 ease-in-out hover:bg-dark rounded-md">
+                      Register
+                    </div>
+                  </motion.button>
+                </Link>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

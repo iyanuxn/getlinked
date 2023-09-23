@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { useInView, motion } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { useInView, motion, useAnimation } from "framer-motion";
 
 const timeline = [
   {
@@ -43,6 +43,16 @@ const timeline = [
 const Timeline = () => {
   const ref = useRef();
   const inView = useInView(ref, { once: true });
+  // Animation controls for the mobile timeline
+  const mobileTimelineControls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      mobileTimelineControls.start({ opacity: 1, y: 0 });
+    } else {
+      mobileTimelineControls.start({ opacity: 0, y: "20%" });
+    }
+  }, [inView, mobileTimelineControls]);
   return (
     <div
       ref={ref}
@@ -72,7 +82,7 @@ const Timeline = () => {
                 transition={{
                   type: "spring",
                   stiffness: 100,
-                  delay: 0.5 * index,
+                  delay: 0.3 * index,
                 }}
                 className={`flex flex-col w-1/3 ${
                   index % 2 === 0 ? "md:text-right" : "md:text-left"
@@ -99,7 +109,7 @@ const Timeline = () => {
                 transition={{
                   type: "spring",
                   stiffness: 100,
-                  delay: 0.6 * index,
+                  delay: 0.4 * index,
                 }}
                 className={`font-bold text-xs md:text-xl text-primary w-1/3  ${
                   index % 2 === 0 ? "md:text-left" : "md:text-right"
@@ -113,7 +123,17 @@ const Timeline = () => {
         {/* Mobile */}
         <div className="md:hidden w-full relative">
           {timeline.map((item, index) => (
-            <div key={index} className="flex flex-col mt-6">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: "20%" }}
+              animate={mobileTimelineControls}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                delay: 0.2 * index,
+              }}
+              className="flex flex-col mt-6"
+            >
               <div className="flex border-l-[0.9vw] border-primary ml-[2.9vw] mb-2 pl-6 h-20">
                 <div className="flex flex-col">
                   <span className="font-bold font-head text-[0.8em] md:text-xl text-primary">
@@ -130,7 +150,7 @@ const Timeline = () => {
                   {item.date}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
