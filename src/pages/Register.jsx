@@ -323,7 +323,7 @@ const Register = () => {
                       {categoryOptions.map((option, index) => (
                         <div
                           key={index}
-                          className={`hover:bg-darkAlt px-4 py-3 cursor-pointer flex gap-5 items-center transition-all duration-300 ease-in-out ${zIndexC}`}
+                          className={`hover:bg-darkAlt overflow-hidden px-4 py-3 cursor-pointer flex gap-5 items-center transition-all duration-300 ease-in-out ${zIndexC}`}
                           onClick={() => {
                             handleCategorySelect(option.name, option.id);
                           }}
@@ -369,7 +369,7 @@ const Register = () => {
                       {sizeOptions.map((option, index) => (
                         <div
                           key={index}
-                          className={`hover:bg-darkAlt px-4 py-3 cursor-pointer flex gap-5 items-center transition-all duration-300 ease-in-out ${zIndexS}`}
+                          className={`hover:bg-darkAlt overflow-hidden px-4 py-3 cursor-pointer flex gap-5 items-center transition-all duration-300 ease-in-out ${zIndexS}`}
                           onClick={() => {
                             handleSizeSelect(option.name);
                           }}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const ComingSoon = () => {
+const NotFound = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,4 +18,4 @@ const ComingSoon = () => {
   );
 };
 
-export default ComingSoon;
+export default NotFound;

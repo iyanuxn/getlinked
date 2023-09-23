@@ -4,7 +4,7 @@ import App from "./pages/App";
 import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 import ComingSoon from "./pages/ComingSoon";
-import NotFound from "./pages/404";
+import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

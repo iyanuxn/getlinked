@@ -1,11 +1,12 @@
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="bg-dark">
       <Navbar />
-      {children}
+      <AnimatePresence mode="wait">{children}</AnimatePresence>
       <ScrollToTopButton />
     </div>
   );

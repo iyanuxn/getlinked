@@ -37,13 +37,13 @@ const Navbar = () => {
         {/* Desktop navbar */}
         <div className="hidden md:flex flex-row justify-between items-center">
           {" "}
-          <button className="font-head font-extrabold">
+          <button className="font-head font-extrabold ">
             <Link to="/" className="text-2xl">
               <span className="text-white">get</span>
               <span className="text-primary">linked</span>
             </Link>
           </button>
-          <div className="flex flex-row justify-between items-center gap-24">
+          <div className="flex flex-row justify-between items-center gap-20">
             <div className="flex flex-row justify-between items-center gap-16  text-white font-medium text-[0.9em]">
               {" "}
               <button className="hover:from-primary hover:to-secondary hover:bg-clip-text hover:text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text bg-white transition-all duration-300 ease-in-out">

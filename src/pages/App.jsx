@@ -10,7 +10,7 @@ import IDEA from "../assets/bigIdea.png";
 import GUIDE from "../assets/guidelines.svg";
 import JUDGE from "../assets/judge.svg";
 import FAQs from "../assets/FAQs.svg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const judge = [
   {
@@ -79,7 +79,7 @@ const App = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
       className="bg-dark webBg font-regular"
     >
       <Header />
@@ -100,7 +100,6 @@ const App = () => {
         text="Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have the chance to transform your ideas into reality. Solving real-world problems, pushing the boundaries of technology, and creating solutions that can change the world, that's what we're all about!"
       />
       <Section
-        id=""
         imageSrc={JUDGE}
         title="Judging Criteria"
         titlesub="Key attributes"
@@ -140,7 +139,12 @@ const App = () => {
                   className="cursor-pointer"
                   onClick={() => handleAccordionClick(index)}
                 >
-                  <div className="font-medium text-white border-b border-primary pb-2">
+                  <motion.div
+                    layout
+                    className={`font-medium text-white border-b border-primary pb-2 transition-all duration-300 ease-in-out ${
+                      activeIndex === index ? "h-fit" : "h-10"
+                    }`}
+                  >
                     <div className="flex justify-between">
                       <span className="text-xs text-left md:text-base">
                         {" "}
@@ -150,12 +154,20 @@ const App = () => {
                         +
                       </span>
                     </div>
-                    {activeIndex === index && (
-                      <div className="font-regular font-normal md:leading-7 md:mt-5 mt-2 md:text-base text-xs text-left">
-                        <span> {faq.answer}</span>{" "}
-                      </div>
-                    )}
-                  </div>
+                    <AnimatePresence>
+                      {activeIndex === index && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                          className="font-regular font-normal md:leading-7 md:mt-5 mt-2 md:text-base text-xs text-left"
+                        >
+                          <span>{faq.answer}</span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
                 </div>
               </div>
             ))}
