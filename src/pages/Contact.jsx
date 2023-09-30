@@ -218,18 +218,6 @@ const Contact = () => {
               </button>
               <button>
                 <img src={X} className="w-4 h-4" alt="X" />{" "}
-                <button>
-                  <img src={IG} className="w-5 h-5" alt="Instagram" />
-                </button>
-                <button>
-                  <img src={X} className="w-4 h-4" alt="X" />
-                </button>
-                <button>
-                  <img src={FB} className="w-4 h-4" alt="Facebook" />
-                </button>
-                <button>
-                  <img src={LINKEDIN} className="w-5 h-5" alt="LinkedIn" />
-                </button>
               </button>
               <button>
                 <img src={FB} className="w-4 h-4" alt="Facebook" />
