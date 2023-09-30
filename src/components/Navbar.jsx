@@ -79,7 +79,7 @@ const Navbar = () => {
     <>
       <div
         className={`navbar backdrop-blur-md md:px-20 px-12 md:pt-12 pt-8 md:pb-7 pb-5 border-b border-b-white border-opacity-30 fixed bg-dark bg-opacity-90 z-[100] transition-all duration-300 ease-in-out inset-0 top-0 h-max font-regular ${
-          visible ? "top-0" : "-top-60"
+          visible ? "top-0" : "-top-80"
         }`}
       >
         <div className="hidden md:flex flex-row justify-between items-center">
@@ -116,7 +116,7 @@ const Navbar = () => {
 
         <div
           className={`flex transition-all ease-in-out duration-300 md:hidden flex-row justify-between items-center ${
-            visible ? "top-0" : "-top-40"
+            visible ? "top-0" : "-top-80"
           }`}
         >
           <button className="font-head font-extrabold">
